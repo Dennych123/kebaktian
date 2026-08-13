@@ -529,6 +529,21 @@
     .cross-symbol { display: none; }
     .ornament-top { width: 80px; top: 2vh; }
   }
+
+  /* ===== MODE RINGAN (HP) =====
+     feTurbulence noise, blur berlapis, dan text/box-shadow sangat berat untuk GPU HP
+     dan menyebabkan macet/lag. PC (pointer halus, layar lebar) tetap pakai efek penuh. */
+  @media (max-width: 768px), (pointer: coarse) {
+    body::before { display: none; }
+    .sunrays, .art-glow { display: none !important; }
+    .slide::after, .slide.active::after { content: none !important; }
+    .slide {
+      background: linear-gradient(180deg, var(--bg-dark) 0%, var(--navy-deep) 45%, var(--sky-mid) 78%, rgba(232, 238, 243, 0.35) 100%);
+      filter: none !important;
+    }
+    h1, h2, .section-title, .cross-hero, .lyric-body { text-shadow: none; }
+    .qris-container { box-shadow: none; }
+  }
 </style>
 </head>
 <body>
