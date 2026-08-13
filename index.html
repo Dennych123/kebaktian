@@ -113,6 +113,8 @@
   }
   .glow-1 { top: -15%; left: -12%; width: 55vw; height: 55vw; background: var(--sun-warm); }
   .glow-2 { bottom: -22%; right: -10%; width: 60vw; height: 60vw; background: var(--sky-mid); }
+  .slide:not(.active) .art-glow,
+  .slide:not(.active) .sunrays { display: none; }
 
   /* sinar matahari halus dari kiri-atas (mengikuti gambar) */
   .sunrays {
@@ -127,8 +129,10 @@
     z-index: 0;
   }
 
-  /* lapisan awan di bagian bawah slide */
-  .slide::after {
+  /* lapisan awan di bagian bawah slide — hanya dirender untuk slide aktif,
+     supaya HP tidak menumpuk puluhan layer blur sekaligus (penyebab layar jadi biru polos) */
+  .slide::after { content: none; }
+  .slide.active::after {
     content: "";
     position: absolute;
     left: 0; right: 0; bottom: 0;
