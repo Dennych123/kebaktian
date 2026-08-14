@@ -146,6 +146,21 @@
     z-index: 0;
   }
 
+  /* ===== SLIDE GAMBAR (materi firman dari PPT) ===== */
+  .slide.image-slide {
+    padding: 0;
+    background: #000;
+  }
+  .slide.image-slide::after { content: none; }
+  .slide-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+    position: relative;
+    z-index: 2;
+  }
+
   .ornament-top {
     position: absolute;
     top: 3vh;
@@ -805,28 +820,28 @@
     </div>
   </div>
 
-  <!-- SLIDE 19: PEMBERITAAN FIRMAN -->
-  <div class="slide important">
-    <div class="tag">Pemberitaan Firman · Umat Duduk</div>
-    <h2>Mazmur 62:1–5</h2>
-    <div class="gold-divider"></div>
-    <div class="liturgy-box">
-      <div class="liturgy-row">
-        <div class="liturgy-role"><span class="role-icon">✠</span> 1</div>
-        <div class="liturgy-text">Doa Pembacaan Alkitab <em>(Adithya)</em></div>
-      </div>
-      <div class="liturgy-row">
-        <div class="liturgy-role"><span class="role-icon">✠</span> 2</div>
-        <div class="liturgy-text">Pembacaan Alkitab: Mazmur 62:1–5 <em>(Adithya)</em></div>
-      </div>
-      <div class="liturgy-row">
-        <div class="liturgy-role"><span class="role-icon">✠</span> 3</div>
-        <div class="liturgy-text">Renungan <em>(Adithya)</em></div>
-      </div>
-    </div>
+  <!-- SLIDE 19-23: PEMBERITAAN FIRMAN (materi sharing, Adithya) -->
+  <div class="slide image-slide">
+    <img class="slide-image" src="firman1.jpg" alt="Pemberitaan Firman 1/5" decoding="async">
   </div>
 
-  <!-- SLIDE 20: HIDUP INI ADALAH KESEMPATAN -->
+  <div class="slide image-slide">
+    <img class="slide-image" src="firman2.jpg" alt="Pemberitaan Firman 2/5" decoding="async">
+  </div>
+
+  <div class="slide image-slide">
+    <img class="slide-image" src="firman3.jpg" alt="Pemberitaan Firman 3/5" decoding="async">
+  </div>
+
+  <div class="slide image-slide">
+    <img class="slide-image" src="firman4.jpg" alt="Pemberitaan Firman 4/5" decoding="async">
+  </div>
+
+  <div class="slide image-slide">
+    <img class="slide-image" src="firman5.jpg" alt="Pemberitaan Firman 5/5" decoding="async">
+  </div>
+
+  <!-- SLIDE 24: HIDUP INI ADALAH KESEMPATAN -->
   <div class="slide lyric">
     <div class="lyric-wrapper">
       <div class="lyric-header">Hidup Ini Adalah Kesempatan</div>
@@ -843,7 +858,7 @@
     </div>
   </div>
 
-  <!-- SLIDE 21 -->
+  <!-- SLIDE 25 -->
   <div class="slide lyric">
     <div class="lyric-wrapper">
       <div class="lyric-header">Hidup Ini Adalah Kesempatan</div>
@@ -859,14 +874,14 @@
     </div>
   </div>
 
-  <!-- SLIDE 22: DOA SYAFAAT -->
+  <!-- SLIDE 26: DOA SYAFAAT -->
   <div class="slide important">
     <div class="section-icon">†</div>
     <div class="section-title">Doa Syafaat</div>
     <div class="section-sub">Ibu Carla</div>
   </div>
 
-  <!-- SLIDE 23: PERSEMBAHAN SYUKUR + QRIS -->
+  <!-- SLIDE 27: PERSEMBAHAN SYUKUR + QRIS -->
   <div class="slide important">
     <div class="split-layout">
       <div style="text-align: center;">
@@ -879,7 +894,7 @@
     </div>
   </div>
 
-  <!-- SLIDE 24: TIAP LANGKAHKU + QRIS -->
+  <!-- SLIDE 28: TIAP LANGKAHKU + QRIS -->
   <div class="slide lyric">
     <div class="split-layout">
       <div class="lyric-wrapper">
@@ -897,7 +912,7 @@
     </div>
   </div>
 
-  <!-- SLIDE 25 -->
+  <!-- SLIDE 29 -->
   <div class="slide lyric">
     <div class="split-layout">
       <div class="lyric-wrapper">
@@ -916,7 +931,7 @@
     </div>
   </div>
 
-  <!-- SLIDE 26 -->
+  <!-- SLIDE 30 -->
   <div class="slide lyric">
     <div class="lyric-wrapper">
       <div class="lyric-header">Tiap Langkahku</div>
@@ -929,7 +944,7 @@
     </div>
   </div>
 
-  <!-- SLIDE 27 -->
+  <!-- SLIDE 31 -->
   <div class="slide lyric">
     <div class="lyric-wrapper">
       <div class="lyric-header">Tiap Langkahku · Reff</div>
@@ -943,14 +958,14 @@
     </div>
   </div>
 
-  <!-- SLIDE 28: DOA PERSEMBAHAN & PENUTUP -->
+  <!-- SLIDE 32: DOA PERSEMBAHAN & PENUTUP -->
   <div class="slide important">
     <div class="section-icon">†</div>
     <div class="section-title">Doa Persembahan<br>&amp; Doa Penutup</div>
     <div class="section-sub">Diakhiri Doa Bapa Kami · Adithya</div>
   </div>
 
-  <!-- SLIDE 29: PENGUMUMAN -->
+  <!-- SLIDE 33: PENGUMUMAN -->
   <div class="slide announcement">
     <div class="tag"></div>
     <h2>Pengumuman</h2>
@@ -961,7 +976,7 @@
     </ul>
   </div>
 
-  <!-- SLIDE 30: AKU BAHAGIA -->
+  <!-- SLIDE 34: AKU BAHAGIA -->
   <div class="slide lyric">
     <div class="lyric-wrapper">
       <div class="lyric-header">Aku Bahagia</div>
@@ -974,7 +989,7 @@
     </div>
   </div>
 
-  <!-- SLIDE 31 -->
+  <!-- SLIDE 35 -->
   <div class="slide lyric">
     <div class="lyric-wrapper">
       <div class="lyric-header">Aku Bahagia</div>
@@ -987,7 +1002,7 @@
     </div>
   </div>
 
-  <!-- SLIDE 32: SAAT TEDUH -->
+  <!-- SLIDE 36: SAAT TEDUH -->
   <div class="slide important">
     <div class="sunrays"></div>
     <div class="art-glow glow-1" style="opacity: 0.10;"></div>
@@ -997,7 +1012,7 @@
     <p style="letter-spacing: 0.15em; text-transform: uppercase; font-size: 12px; color: var(--text-dim); position: relative; z-index: 2;">Satu Hati • Satu Iman • Satu Tujuan</p>
   </div>
 
-  <!-- SLIDE 33: SELESAI -->
+  <!-- SLIDE 37: SELESAI -->
   <div class="slide important">
     <div class="art-glow glow-2" style="opacity: 0.07;"></div>
     <h1 style="font-size: clamp(28px, 4.5vw, 56px); font-weight: 300; letter-spacing: 0.05em; color: var(--text-dim);">Kebaktian Selesai</h1>
