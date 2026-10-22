@@ -3,20 +3,19 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ibadah Bersama — Denso Indonesia Group · 14 Agustus 2026</title>
+<title>Ibadah Bersama — Denso Indonesia Group · 23 Oktober 2026</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Cinzel:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
 
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
   :root {
-    --bg-dark: #0a2c4d;       /* langit biru dalam (atas gambar) */
-    --navy-deep: #17588a;     /* biru langit tengah */
-    --sky-mid: #2f7ba8;       /* biru terang dekat cahaya */
-    --cloud: #e8eef3;         /* awan */
-    --gold-glow: #f0c268;     /* salib emas */
-    --gold-muted: #c9a24d;
-    --sun-warm: #ffeec4;      /* cahaya matahari hangat */
+    --bg-dark: #07110d;
+    --forest-mid: #122317;
+    --olive-mid: #35452a;
+    --gold-glow: #f1d98f;
+    --gold-muted: #bda65e;
+    --sun-warm: #fff0bd;
     --text-light: #ffffff;
     --text-dim: rgba(255, 255, 255, 0.85);
     --text-muted: rgba(255, 255, 255, 0.6);
@@ -53,10 +52,12 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    /* langit: cahaya hangat dari kiri-atas, biru dalam di kanan-bawah, kabut awan di dasar */
+    /* Cahaya lilin dan sapuan hijau zaitun mengikuti poster acara. */
     background:
-      radial-gradient(ellipse 60% 45% at 18% 22%, rgba(255, 238, 196, 0.35) 0%, rgba(255, 238, 196, 0) 60%),
-      linear-gradient(180deg, var(--bg-dark) 0%, var(--navy-deep) 45%, var(--sky-mid) 78%, rgba(232, 238, 243, 0.35) 100%);
+      radial-gradient(ellipse 28% 38% at 76% 58%, rgba(255, 190, 72, 0.16) 0%, transparent 72%),
+      radial-gradient(ellipse 58% 78% at 76% 54%, rgba(104, 117, 52, 0.32) 0%, transparent 74%),
+      radial-gradient(ellipse 60% 65% at 8% 100%, rgba(91, 58, 30, 0.16) 0%, transparent 72%),
+      linear-gradient(135deg, var(--bg-dark) 0%, var(--forest-mid) 52%, #1b2918 100%);
     opacity: 0;
     transform: scale(1.02) translateZ(0);
     filter: blur(6px);
@@ -112,20 +113,20 @@
     will-change: transform;
   }
   .glow-1 { top: -15%; left: -12%; width: 55vw; height: 55vw; background: var(--sun-warm); }
-  .glow-2 { bottom: -22%; right: -10%; width: 60vw; height: 60vw; background: var(--sky-mid); }
+  .glow-2 { bottom: -22%; right: -10%; width: 60vw; height: 60vw; background: var(--olive-mid); }
   .slide:not(.active) .art-glow,
   .slide:not(.active) .sunrays { display: none; }
 
-  /* sinar matahari halus dari kiri-atas (mengikuti gambar) */
+  /* Cahaya hangat menyerupai nyala lilin pada poster. */
   .sunrays {
     position: absolute;
     inset: 0;
     pointer-events: none;
-    opacity: 0.10;
-    background: repeating-conic-gradient(from 200deg at 20% 24%,
-      rgba(255, 238, 196, 0.9) 0deg 2deg, rgba(255, 238, 196, 0) 2deg 9deg);
-    mask-image: radial-gradient(circle at 20% 24%, #000 0%, transparent 70%);
-    -webkit-mask-image: radial-gradient(circle at 20% 24%, #000 0%, transparent 70%);
+    opacity: 0.025;
+    background: repeating-conic-gradient(from 205deg at 76% 58%,
+      rgba(255, 224, 143, 0.7) 0deg 2deg, rgba(255, 224, 143, 0) 2deg 10deg);
+    mask-image: radial-gradient(circle at 76% 58%, #000 0%, transparent 66%);
+    -webkit-mask-image: radial-gradient(circle at 76% 58%, #000 0%, transparent 66%);
     z-index: 0;
   }
 
@@ -138,9 +139,9 @@
     left: 0; right: 0; bottom: 0;
     height: 26vh;
     background:
-      radial-gradient(ellipse 45% 100% at 15% 100%, rgba(255,255,255,0.30), transparent 70%),
-      radial-gradient(ellipse 55% 100% at 55% 105%, rgba(255,255,255,0.22), transparent 70%),
-      radial-gradient(ellipse 40% 100% at 90% 100%, rgba(255,255,255,0.26), transparent 70%);
+      radial-gradient(ellipse 45% 100% at 15% 100%, rgba(113,132,66,0.20), transparent 70%),
+      radial-gradient(ellipse 55% 100% at 55% 105%, rgba(71,92,48,0.24), transparent 70%),
+      radial-gradient(ellipse 40% 100% at 90% 100%, rgba(159,133,65,0.13), transparent 70%);
     filter: blur(14px);
     pointer-events: none;
     z-index: 0;
@@ -194,7 +195,7 @@
     font-size: clamp(56px, 8vw, 110px);
     line-height: 1;
     color: var(--gold-glow);
-    text-shadow: 0 0 30px rgba(240, 194, 104, 0.65), 0 0 80px rgba(255, 238, 196, 0.35);
+    text-shadow: 0 0 30px rgba(241, 217, 143, 0.65), 0 0 80px rgba(255, 240, 189, 0.35);
     margin-bottom: 1.5rem;
     position: relative;
     z-index: 2;
@@ -218,7 +219,7 @@
     line-height: 1.15;
     letter-spacing: -0.01em;
     color: var(--text-light);
-    text-shadow: 0 2px 24px rgba(10, 44, 77, 0.55);
+    text-shadow: 0 2px 24px rgba(3, 10, 6, 0.65);
     position: relative;
     z-index: 2;
   }
@@ -227,7 +228,7 @@
     font-size: clamp(32px, 4.5vw, 56px);
     font-weight: 400;
     letter-spacing: 0.05em;
-    text-shadow: 0 2px 20px rgba(10, 44, 77, 0.5);
+    text-shadow: 0 2px 20px rgba(3, 10, 6, 0.65);
     position: relative;
     z-index: 2;
   }
@@ -334,13 +335,53 @@
     display: block;
   }
 
+  .community-invite {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(2rem, 6vw, 6rem);
+    width: min(100%, 980px);
+    position: relative;
+    z-index: 2;
+  }
+  .community-invite-copy { max-width: 540px; text-align: left; }
+  .community-invite-copy h2 { text-align: left; }
+  .community-invite-caption {
+    color: var(--text-dim);
+    font-size: clamp(14px, 1.4vw, 18px);
+    margin-bottom: 1rem;
+  }
+  .community-invite-link {
+    color: var(--gold-glow);
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration-color: rgba(241, 217, 143, 0.5);
+    text-underline-offset: 0.3em;
+  }
+  .community-qr-frame {
+    display: block;
+    width: min(34vh, 340px);
+    aspect-ratio: 1;
+    padding: 16px;
+    flex: 0 0 auto;
+    background: #ffffff;
+    border: 1px solid rgba(241, 217, 143, 0.42);
+    box-shadow: 0 12px 42px rgba(0, 0, 0, 0.35);
+  }
+  .community-qr {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
   /* ===== LIRIK ===== */
   .lyric-wrapper {
     text-align: left;
     max-width: 900px;
     width: 100%;
     padding-left: 4vw;
-    border-left: 2px solid rgba(240, 194, 104, 0.3);
+    border-left: 2px solid rgba(241, 217, 143, 0.34);
     position: relative;
     z-index: 2;
   }
@@ -357,7 +398,7 @@
     font-size: clamp(22px, 3.2vw, 42px);
     line-height: 1.7;
     color: var(--text-light);
-    text-shadow: 0 2px 18px rgba(10, 44, 77, 0.55);
+    text-shadow: 0 2px 18px rgba(3, 10, 6, 0.65);
     font-weight: 300;
     letter-spacing: 0.02em;
     max-width: 700px;
@@ -383,7 +424,7 @@
     color: var(--gold-glow);
     margin-bottom: 1rem;
     opacity: 0.9;
-    text-shadow: 0 0 24px rgba(240, 194, 104, 0.5);
+    text-shadow: 0 0 24px rgba(241, 217, 143, 0.5);
     position: relative;
     z-index: 2;
   }
@@ -391,7 +432,7 @@
     font-family: 'Cinzel', serif;
     font-size: clamp(32px, 4.5vw, 64px);
     font-weight: 400;
-    text-shadow: 0 2px 20px rgba(10, 44, 77, 0.5);
+    text-shadow: 0 2px 20px rgba(3, 10, 6, 0.65);
     position: relative;
     z-index: 2;
   }
@@ -443,7 +484,7 @@
     padding: 2rem 3rem;
     background: rgba(255, 255, 255, 0.06);
     border-radius: 8px;
-    border: 1px solid rgba(240, 194, 104, 0.18);
+    border: 1px solid rgba(241, 217, 143, 0.22);
   }
   .liturgy-row {
     margin-bottom: 1.5rem;
@@ -490,8 +531,8 @@
   }
   .click-zone.left { left: 0; border-radius: 0 20px 20px 0; }
   .click-zone.right { right: 0; border-radius: 20px 0 0 20px; }
-  .click-zone:hover { background: rgba(240, 194, 104, 0.05); }
-  .click-zone:active { background: rgba(240, 194, 104, 0.09); }
+  .click-zone:hover { background: rgba(241, 217, 143, 0.05); }
+  .click-zone:active { background: rgba(241, 217, 143, 0.09); }
 
   /* ===== OVERLAY GAMBAR YESUS MURNI LANDSCAPE (TOMBOL C) ===== */
   .jesus-overlay {
@@ -537,6 +578,11 @@
     .slide { padding: 6vh 6vw; }
     .lyric-wrapper { padding-left: 3vw; border-left-width: 1px; }
     .lyric-body { font-size: clamp(18px, 4vw, 28px); line-height: 1.6; }
+    .community-invite { flex-direction: column; gap: 1.5rem; }
+    .community-invite-copy { text-align: center; }
+    .community-invite-copy h2 { text-align: center; }
+    .community-invite-copy .gold-divider { margin-left: auto !important; }
+    .community-qr-frame { width: min(34vh, 250px); padding: 12px; }
     .liturgy-box { padding: 1.5rem; font-size: clamp(14px, 2.5vw, 18px); }
     .liturgy-row { flex-direction: column; gap: 0.25rem; }
     .liturgy-role { min-width: auto; }
@@ -553,7 +599,10 @@
     .sunrays, .art-glow { display: none !important; }
     .slide::after, .slide.active::after { content: none !important; }
     .slide {
-      background: linear-gradient(180deg, var(--bg-dark) 0%, var(--navy-deep) 45%, var(--sky-mid) 78%, rgba(232, 238, 243, 0.35) 100%);
+      background:
+        radial-gradient(ellipse 28% 38% at 76% 58%, rgba(255, 190, 72, 0.14) 0%, transparent 72%),
+        radial-gradient(ellipse 58% 78% at 76% 54%, rgba(104, 117, 52, 0.28) 0%, transparent 74%),
+        linear-gradient(135deg, var(--bg-dark) 0%, var(--forest-mid) 52%, #1b2918 100%);
       filter: none !important;
     }
     h1, h2, .section-title, .cross-hero, .lyric-body { text-shadow: none; }
@@ -588,20 +637,20 @@
     </div>
     <div class="cross-hero">✝</div>
     <div style="margin-bottom: 1.5rem; text-align: center; width: 100%; position: relative; z-index: 2;">
-      <div class="tag" style="margin-bottom: 1rem;">Bersyukur &amp; Bersukacita</div>
+      <div class="tag" style="margin-bottom: 1rem;">Kebaktian Bersama</div>
       <h1 style="margin-bottom: 0.75rem;">Ibadah Bersama</h1>
       <div class="subtitle-gold">Denso Indonesia Group</div>
       <div class="gold-divider" style="margin: 1.75rem auto;"></div>
     </div>
     <div class="verse-box" style="margin-bottom: 2.5rem;">
-      <p>"KETENANGAN HANYA DI DALAM YESUS."</p>
-      <cite>Mazmur 62:1-5</cite>
+      <p>MERAWAT PERSAUDARAAN SEJATI</p>
+      <cite>Tema Ibadah</cite>
     </div>
     <table class="meta-table" style="margin-bottom: 0;">
       <tbody><tr>
-        <td class="td-left">Jumat, 14 Agustus 2026 · 17.30 WIB</td>
+        <td class="td-left">Jumat, 23 Oktober 2026</td>
         <td style="width: 1px; padding: 0;"><div class="td-divider"></div></td>
-        <td class="td-right">Auditorium Bekasi Plant</td>
+        <td class="td-right">Denso Indonesia Group</td>
       </tr>
     </tbody></table>
   </div>
@@ -610,300 +659,203 @@
   <div class="slide important">
     <div class="sunrays"></div>
     <div class="tag">Tema Ibadah</div>
-    <h2>Ketenangan Hanya<br>di Dalam Yesus</h2>
+    <h2>Merawat<br>Persaudaraan Sejati</h2>
     <div class="gold-divider"></div>
-    <div class="verse-box" style="margin-top: 0;">
-      <p>"KETENANGAN HANYA DI DALAM YESUS."</p>
-      <cite>Mazmur 62:1–5</cite>
-    </div>
   </div>
 
-  <!-- SLIDE 3: PERSIAPAN -->
-  <div class="slide important">
-    <div class="section-icon">†</div>
-    <div class="section-title">Persiapan</div>
-    <div class="section-sub">Saat Teduh</div>
-  </div>
-
-  <!-- SLIDE 4: MARI KITA BERSUKARIA -->
+  <!-- SLIDE 4: LEBIH DARI PEMENANG -->
   <div class="slide lyric">
     <div class="lyric-wrapper">
-      <div class="lyric-header">Mari Kita Bersukaria · Umat Berdiri</div>
-      <div class="lyric-body">
-        Mari kita bersukaria<br>
-        Kar'na ini hari bahagia<br>
-        Kita berkumpul jadi satu<br>
-        Puji Tuhan semesta itu<br>
-        Haleluya
-      </div>
-    </div>
-  </div>
-
-  <!-- SLIDE 5 -->
-  <div class="slide lyric">
-    <div class="lyric-wrapper">
-      <div class="lyric-header">Mari Kita Bersukaria</div>
-      <div class="lyric-body">
-        Tepuk tangan wajah berseri<br>
-        Hilangkanlah hati yang sedih<br>
-        Bukankah Yesus berkata<br>
-        Damai yang dib'rikan kita<br>
-        Mari kita bersukaria
-      </div>
-    </div>
-  </div>
-
-  <!-- SLIDE 6 -->
-  <div class="slide lyric">
-    <div class="lyric-wrapper">
-      <div class="lyric-header">Mari Kita Bersukaria · Wanita &amp; Pria</div>
+      <div class="lyric-header">Lebih Dari Pemenang · Umat Berdiri</div>
       <div class="lyric-body small">
-        Mari kita bersukaria <span class="voice">Wanita</span><br>
-        Kar'na ini <span class="voice">Pria</span><br>
-        Kar'na ini hari bahagia <span class="voice">Wanita</span><br>
-        Kita berkumpul <span class="voice">Pria</span><br>
-        Kita berkumpul jadi satu <span class="voice">Wanita</span>
+        Lebih dari pemenang<br>
+        Dalam segala perkara<br>
+        Iblis telah dikalahkan<br>
+        Oleh kuasa darah-Nya<br>
+        Jika Allah di pihak kita<br>
+        Siapa dapat melawan<br>
+        Kita lebih dari pemenang
       </div>
     </div>
   </div>
 
-  <!-- SLIDE 7 -->
+  <!-- SLIDE 5: LEBIH DARI PEMENANG - REFF -->
   <div class="slide lyric">
     <div class="lyric-wrapper">
-      <div class="lyric-header">Mari Kita Bersukaria · Wanita &amp; Pria</div>
+      <div class="lyric-header">Lebih Dari Pemenang · Reff &amp; Bridge</div>
       <div class="lyric-body small">
-        Puji Tuhan <span class="voice">Pria</span><br>
-        Puji Tuhan semesta itu <span class="voice">Wanita</span><br>
-        Haleluya <span class="voice">Pria</span><br>
-        Tepuk tangan wajah berseri <span class="voice">Wanita</span><br>
-        Hilangkanlah <span class="voice">Pria</span><br>
-        Hilangkanlah hati yang sedih <span class="voice">Wanita</span>
+        Haleluya<br>
+        Kibarkanlah panjiNya<br>
+        Yesus Raja segala Raja<br>
+        Haleluya bangkitlah gerejaNya<br>
+        Kita lebih, lebih dari pemenang<br><br>
+        Kita lebih dari pemenang<br>
+        Kita lebih dari pemenang
       </div>
     </div>
   </div>
 
-  <!-- SLIDE 8 -->
-  <div class="slide lyric">
-    <div class="lyric-wrapper">
-      <div class="lyric-header">Mari Kita Bersukaria</div>
-      <div class="lyric-body small">
-        Yesus berkata <span class="voice">Pria</span><br>
-        Bukankah Yesus berkata <span class="voice">Semua</span><br>
-        Damai yang dib'rikan kita<br>
-        Mari kita bersukaria
-      </div>
-    </div>
-  </div>
-
-  <!-- SLIDE 9 -->
-  <div class="slide lyric">
-    <div class="lyric-wrapper">
-      <div class="lyric-header">Mari Kita Bersukaria</div>
-      <div class="lyric-body">
-        Bukankah Yesus berkata<br>
-        Damai yang dib'rikan kita<br>
-        Mari kita bersukaria
-      </div>
-    </div>
-  </div>
-
-  <!-- SLIDE 10: DOA PEMBUKAAN -->
+  <!-- SLIDE 6: DOA PEMBUKAAN -->
   <div class="slide important">
     <div class="section-icon">†</div>
     <div class="section-title">Doa Pembukaan</div>
-    <div class="section-sub">Ibu Yuli</div>
+    <div class="section-sub">Worship Leader · Rio</div>
   </div>
 
-  <!-- SLIDE 11: DIA MENGERTI -->
+  <!-- SLIDE 7: SUKACITAKU -->
   <div class="slide lyric">
     <div class="lyric-wrapper">
-      <div class="lyric-header">Dia Mengerti · Reff</div>
+      <div class="lyric-header">Sukacitaku</div>
       <div class="lyric-body small">
-        Dia Mengerti<br>
-        Dia perduli<br>
-        Persoalan yang kita alami<br>
-        Namun satu yang Dia minta<br>
-        Agar kita percaya sampai mukjizat<br>
-        Menjadi nyata
+        Pujian syukurku<br>
+        Kunaikkan bagiMu<br>
+        Kasih dan rahmatMu<br>
+        Tercurah bagiku<br><br>
+        Hidup bersamaMu<br>
+        Ikut kehendakMu<br>
+        Ku berjalan<br>
+        Tinggalkan masa lalu
       </div>
     </div>
   </div>
 
-  <!-- SLIDE 12 -->
+  <!-- SLIDE 8: SUKACITAKU -->
   <div class="slide lyric">
     <div class="lyric-wrapper">
-      <div class="lyric-header">Dia Mengerti</div>
-      <div class="lyric-body">
-        Terkadang kita merasa<br>
-        Tak ada jalan terbuka<br>
-        Tak ada lagi waktu<br>
-        Terlambat sudah
-      </div>
-    </div>
-  </div>
-
-  <!-- SLIDE 13 -->
-  <div class="slide lyric">
-    <div class="lyric-wrapper">
-      <div class="lyric-header">Dia Mengerti</div>
-      <div class="lyric-body">
-        Tuhan tak pernah berdusta<br>
-        Dia slalu pegang janjiNYA<br>
-        Bagi orang percaya<br>
-        Mukjizat nyata
-      </div>
-    </div>
-  </div>
-
-  <!-- SLIDE 14 -->
-  <div class="slide lyric">
-    <div class="lyric-wrapper">
-      <div class="lyric-header">Dia Mengerti · Reff</div>
-      <div class="lyric-body">
-        Dia Mengerti<br>
-        Dia perduli<br>
-        Persoalan yang sedang terjadi
-      </div>
-    </div>
-  </div>
-
-  <!-- SLIDE 15 -->
-  <div class="slide lyric">
-    <div class="lyric-wrapper">
-      <div class="lyric-header">Dia Mengerti · Reff</div>
+      <div class="lyric-header">Sukacitaku</div>
       <div class="lyric-body small">
-        Dia Mengerti<br>
-        Dia perduli<br>
-        Persoalan yang kita alami<br>
-        Namun satu yang Dia minta<br>
-        Agar kita percaya sampai mukjizat<br>
-        Menjadi nyata
+        KasihMu yang terbesar<br>
+        KasihMu segalanya<br>
+        JanjiMu yang sempurna<br>
+        Oh Kaulah sukacitaku<br><br>
+        Bersuka dalamMu<br>
+        Yesus Kau kekuatanku<br>
+        Aman di dalamMu<br>
+        Menara perlindunganku
       </div>
     </div>
   </div>
 
-  <!-- SLIDE 16 -->
+  <!-- SLIDE 9: SUKACITAKU -->
   <div class="slide lyric">
     <div class="lyric-wrapper">
-      <div class="lyric-header">Dia Mengerti</div>
-      <div class="lyric-body">
-        Namun satu yang Dia minta<br>
-        Agar kita percaya sampai mukjizat<br>
-        Menjadi nyata
-      </div>
-    </div>
-  </div>
-
-  <!-- SLIDE 17: SEMUA BAIK -->
-  <div class="slide lyric">
-    <div class="lyric-wrapper">
-      <div class="lyric-header">Semua Baik</div>
+      <div class="lyric-header">Sukacitaku · Reff</div>
       <div class="lyric-body small">
-        Dari semula t'lah kau tetapkan<br>
-        Hidupku dalam tanganmu dalam rencanamu Tuhan<br>
-        Rencana indah t'lah kau siapkan<br>
-        Bagi masa depanku yang penuh harapan
+        Menari bagiMu<br>
+        Yesus Kau sukacitaku<br>
+        Mulialah namaMu oh Yesusku<br><br>
+        Mulialah namaMu<br>
+        Kaulah sukacitaku<br>
+        Mulialah namaMu oh Yesusku
       </div>
     </div>
   </div>
 
-  <!-- SLIDE 18 -->
+  <!-- SLIDE 10: MENGENAL-MU -->
   <div class="slide lyric">
     <div class="lyric-wrapper">
-      <div class="lyric-header">Semua Baik · Reff</div>
+      <div class="lyric-header">Mengenal-Mu</div>
       <div class="lyric-body small">
-        S'mua baik s'mua baik<br>
-        Apa yang t'lah kau perbuat di dalam hidupku<br>
-        S'mua baik sungguh teramat baik<br>
-        Kau jadikan hidupku berarti
+        Bila ku buka mataku dan lihat wajahmu<br>
+        Ku terkagum<br>
+        Bila ku lihat hidupku dan karya tanganmu<br>
+        Ku tersanjung<br>
+        Kar`na semua yang baik dalam hidupku<br>
+        Itulah karyamu<br>
+        Kau b`ri kesempatan yang baru
       </div>
     </div>
   </div>
 
-  <!-- SLIDE 19-23: PEMBERITAAN FIRMAN (materi sharing, Adithya) -->
-  <div class="slide image-slide">
-    <img class="slide-image" src="firman1.jpg" alt="Pemberitaan Firman 1/5" decoding="async">
-  </div>
-
-  <div class="slide image-slide">
-    <img class="slide-image" src="firman2.jpg" alt="Pemberitaan Firman 2/5" decoding="async">
-  </div>
-
-  <div class="slide image-slide">
-    <img class="slide-image" src="firman3.jpg" alt="Pemberitaan Firman 3/5" decoding="async">
-  </div>
-
-  <div class="slide image-slide">
-    <img class="slide-image" src="firman4.jpg" alt="Pemberitaan Firman 4/5" decoding="async">
-  </div>
-
-  <div class="slide image-slide">
-    <img class="slide-image" src="firman5.jpg" alt="Pemberitaan Firman 5/5" decoding="async">
-  </div>
-
-  <!-- SLIDE 24: HIDUP INI ADALAH KESEMPATAN -->
+  <!-- SLIDE 11: MENGENAL-MU -->
   <div class="slide lyric">
     <div class="lyric-wrapper">
-      <div class="lyric-header">Hidup Ini Adalah Kesempatan</div>
+      <div class="lyric-header">Mengenal-Mu · Reff</div>
       <div class="lyric-body small">
-        Hidup ini<br>
-        adalah kesempatan<br>
-        Hidup ini<br>
-        Untuk melayani Tuhan<br>
-        Jangan sia-siakan<br>
-        Waktu yang Tuhan bri<br>
-        Hidup ini harus<br>
-        Jadi berkat
+        Dan ku ingin mengenalmu Tuhan<br>
+        Lebih dalam dari s`mua yang ku kenal<br>
+        Tiada kasih yang melebihimu<br>
+        Ku ada untuk menjadi penyembahmu
       </div>
     </div>
   </div>
 
-  <!-- SLIDE 25 -->
+  <!-- SLIDE 12: PEMBERITAAN FIRMAN -->
+  <div class="slide important">
+    <div class="section-icon">†</div>
+    <div class="section-title">Pemberitaan Firman</div>
+    <div class="section-sub">Umat Duduk</div>
+    <ul class="info-list" style="margin-top: 1.5rem;">
+      <li>Doa Pembacaan Alkitab · Agustinus Reinard</li>
+      <li>Pembacaan Alkitab · Matius 18:20 · Agustinus Reinard</li>
+      <li>Renungan · Agustinus Reinard</li>
+    </ul>
+  </div>
+
+  <!-- SLIDE 13: PEMBACAAN ALKITAB -->
+  <div class="slide important">
+    <div class="tag">Pembacaan Alkitab</div>
+    <h2>Matius 18:20</h2>
+    <div class="gold-divider"></div>
+    <div class="section-sub">Agustinus Reinard</div>
+  </div>
+
+  <!-- SLIDE 14: BERKENAN BAGI-MU -->
   <div class="slide lyric">
     <div class="lyric-wrapper">
-      <div class="lyric-header">Hidup Ini Adalah Kesempatan</div>
+      <div class="lyric-header">Berkenan Bagi-Mu</div>
       <div class="lyric-body small">
-        Oh Tuhan pakailah Hidupku<br>
-        Selagi<br>
-        aku masih kuat<br>
-        Bila saatnya nanti<br>
-        Ku tak berdaya lagi<br>
-        Hidup ini sudah<br>
-        Jadi berkat
+        Pulihkan, pulihkan<br>
+        Hatiku dengan kasih-Mu<br>
+        Bentuklah, bentuklah<br>
+        Hatiku jadi s'perti-Mu<br>
+        Kekudusan-Mu memenuhiku<br>
+        Tuhan ini rinduku
       </div>
     </div>
   </div>
 
-  <!-- SLIDE 26: DOA SYAFAAT -->
+  <!-- SLIDE 15: BERKENAN BAGI-MU -->
+  <div class="slide lyric">
+    <div class="lyric-wrapper">
+      <div class="lyric-header">Berkenan Bagi-Mu</div>
+      <div class="lyric-body small">
+        Ubah hatiku s'perti hati-Mu<br>
+        Kudus berkenan bagi-Mu<br>
+        Bagaikan emas yang murni<br>
+        Bentuk hatiku s'lalu<br>
+        Biar ku menjadi ciptaan baru<br>
+        Bebas dari s'mua yang jahat<br>
+        Serupa dengan gambar-Mu<br>
+        Sucikanku, kuduskan hatiku Tuhan
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 16: DOA SYAFAAT -->
   <div class="slide important">
     <div class="section-icon">†</div>
     <div class="section-title">Doa Syafaat</div>
     <div class="section-sub">Ibu Carla</div>
   </div>
 
-  <!-- SLIDE 27: PERSEMBAHAN SYUKUR + QRIS -->
+  <!-- SLIDE 17: PERSEMBAHAN SYUKUR -->
   <div class="slide important">
-    <div class="split-layout">
-      <div style="text-align: center;">
-        <div class="section-icon">🕊</div>
-        <div class="section-title">Persembahan Syukur</div>
-      </div>
-      <div class="qris-container">
-        <img src="qris.jpg" decoding="async" alt="QRIS Denso Ministry" class="qris-image">
-      </div>
-    </div>
+    <div class="section-icon">†</div>
+    <div class="section-title">Persembahan Syukur</div>
+    <div class="section-sub">Worship Leader · Team Musik · Multimedia · Dokumentasi</div>
   </div>
 
-  <!-- SLIDE 28: TIAP LANGKAHKU + QRIS -->
+  <!-- SLIDE 18: SERIKAT PERSAUDARAAN -->
   <div class="slide lyric">
     <div class="split-layout">
       <div class="lyric-wrapper">
-        <div class="lyric-header">Tiap Langkahku</div>
-        <div class="lyric-body small" style="margin: 0;">
-          Tiap langkahku, diatur oleh Tuhan<br>
-          Dan tangan kasihNya, memimpinku<br>
-          Di tengah badai dunia, menakutkan<br>
-          Hatiku tetap tenang teduh
+        <div class="lyric-header">Serikat Persaudaraan · Bait 1</div>
+        <div class="lyric-body small">
+          Serikat persaudaraan berdirilah teguh<br>
+          Sempurnakan persatuan di dalam Tuhanmu<br>
+          Bersama-sama majulah dikuatkan iman<br>
+          Berdamai bersejahtera dengan pengasihan
         </div>
       </div>
       <div class="qris-container">
@@ -912,17 +864,16 @@
     </div>
   </div>
 
-  <!-- SLIDE 29 -->
+  <!-- SLIDE 19: SERIKAT PERSAUDARAAN -->
   <div class="slide lyric">
     <div class="split-layout">
       <div class="lyric-wrapper">
-        <div class="lyric-header">Tiap Langkahku · Reff</div>
-        <div class="lyric-body small" style="margin: 0;">
-          Tiap langkahku<br>
-          Ku tahu Tuhan yang pimpin<br>
-          Ke tempat tinggi ku dihantarNya<br>
-          Hingga sekali nanti aku tiba<br>
-          Di rumah Bapa, sorga yang baka
+        <div class="lyric-header">Serikat Persaudaraan · Bait 2</div>
+        <div class="lyric-body small">
+          Serikatmu tetap teguh di atas Alasan,<br>
+          yaitu satu Tuhanmu, dan satulah iman,<br>
+          dan satu juga baptisan dan Bapa satulah,<br>
+          yang olehmu sekalian dipuji, disembah.
         </div>
       </div>
       <div class="qris-container">
@@ -931,93 +882,128 @@
     </div>
   </div>
 
-  <!-- SLIDE 30 -->
-  <div class="slide lyric">
-    <div class="lyric-wrapper">
-      <div class="lyric-header">Tiap Langkahku</div>
-      <div class="lyric-body small">
-        Di waktu imanku mulai goyah<br>
-        Dan bila jalanku hampir sesat<br>
-        Kupandang Tuhanku penebus dosa<br>
-        Ku teguh sebab Dia dekat
-      </div>
-    </div>
-  </div>
-
-  <!-- SLIDE 31 -->
-  <div class="slide lyric">
-    <div class="lyric-wrapper">
-      <div class="lyric-header">Tiap Langkahku · Reff</div>
-      <div class="lyric-body small">
-        Tiap langkahku<br>
-        Ku tahu Tuhan yang pimpin<br>
-        Ke tempat tinggi ku dihantarNya<br>
-        Hingga sekali nanti aku tiba<br>
-        Di rumah Bapa, sorga yang baka
-      </div>
-    </div>
-  </div>
-
-  <!-- SLIDE 32: DOA PERSEMBAHAN & PENUTUP -->
+  <!-- SLIDE 20: DOA PERSEMBAHAN & PENUTUP -->
   <div class="slide important">
     <div class="section-icon">†</div>
     <div class="section-title">Doa Persembahan<br>&amp; Doa Penutup</div>
-    <div class="section-sub">Diakhiri Doa Bapa Kami · Adithya</div>
+    <div class="section-sub">Diakhiri Doa Bapa Kami · Bapak Agustinus</div>
   </div>
 
-  <!-- SLIDE 33: PENGUMUMAN -->
+  <!-- SLIDE 21: PENGUMUMAN -->
   <div class="slide announcement">
-    <div class="tag"></div>
+    <div class="tag">Denso Indonesia Group</div>
     <h2>Pengumuman</h2>
     <div class="gold-divider"></div>
     <ul class="info-list">
-      <li>Update Ibadah Bersama: 2 bulan 1 kali.</li>
-      <li>Informasi jumlah persembahan Ibadah Bersama 26 Juni 2026.</li>
+      <li>Ibadah Natal 22 Januari 2027.</li>
+      <li>Informasi jumlah persembahan Ibadah Bersama 14 Agustus 2026.</li>
     </ul>
   </div>
 
-  <!-- SLIDE 34: AKU BAHAGIA -->
+  <!-- SLIDE 22: PILIHANKU -->
   <div class="slide lyric">
     <div class="lyric-wrapper">
-      <div class="lyric-header">Aku Bahagia</div>
+      <div class="lyric-header">Pilihanku</div>
       <div class="lyric-body small">
-        Aku bahagia bahagia,<br>
-        karna Tuhan Yesus angkat bebanku<br>
-        Yesus angkat bebanku dan buang ke laut... byur<br>
-        Buang ke laut byur... buang ke laut
+        Papapapapapapa<br><br>
+        Kau Tuhan yang mulia turun ke dunia<br>
+        Tuk tebus segala dosa<br>
+        Kau beri kes'lamatan<br>
+        Beri kesempatan<br>
+        KasihMu mengubahkan
       </div>
     </div>
   </div>
 
-  <!-- SLIDE 35 -->
+  <!-- SLIDE 23: PILIHANKU -->
   <div class="slide lyric">
     <div class="lyric-wrapper">
-      <div class="lyric-header">Aku Bahagia</div>
+      <div class="lyric-header">Pilihanku</div>
       <div class="lyric-body small">
-        Aku bahagia bahagia,<br>
-        karna Tuhan Yesus angkat bebanku<br>
-        Yesus angkat bebanku dan buang ke laut... byur<br>
-        Buang ke laut byur... buang ke laut
+        Jika kuakui semua dosaku<br>
+        Maka Kau adalah setia dan adil<br>
+        Kau kan mengampuni dan sucikan<br>
+        Dari segala yang jahat
       </div>
     </div>
   </div>
 
-  <!-- SLIDE 36: SAAT TEDUH -->
+  <!-- SLIDE 24: PILIHANKU -->
+  <div class="slide lyric">
+    <div class="lyric-wrapper">
+      <div class="lyric-header">Pilihanku</div>
+      <div class="lyric-body small">
+        Tak mau kuhidup bagi dunia ini lagi<br>
+        Tak ingin kompromi<br>
+        Tak ingin lakukan hal yang dapat dukakan hatiMu<br>
+        Tak mau kuhidup di luar tutur kata firmanMu<br>
+        Yang telah bebaskanku<br>
+        Yesus kebenaranMu adalah<br>
+        Adalah pilihanku<br><br>
+        Papapapapapapa
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 25: OH BETAPA INDAHNYA -->
+  <div class="slide lyric">
+    <div class="lyric-wrapper">
+      <div class="lyric-header">Oh Betapa IndahNya</div>
+      <div class="lyric-body small">
+        Oh betapa indahnya, Dan betapa eloknya,<br>
+        Bila saudara seiman<br>
+        Hidup dalam persatuan (2x)
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 26: OH BETAPA INDAHNYA -->
+  <div class="slide lyric">
+    <div class="lyric-wrapper">
+      <div class="lyric-header">Oh Betapa IndahNya</div>
+      <div class="lyric-body small">
+        Bak urapan di kepala Harun, yang ke janggut dan jubahnya turun<br>
+        Seperti embun yang dari Hermon<br>
+        Mengalir ke bukit Sion,<br>
+        Ke sana tlah diprintahkan Tuhan,<br>
+        Agar berkat-berkat dicurahkan<br>
+        Kehidupan untuk selamanya, Oh betapa Indahnya.
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 27: SAAT TEDUH -->
   <div class="slide important">
     <div class="sunrays"></div>
     <div class="art-glow glow-1" style="opacity: 0.10;"></div>
     <div class="tag">Denso Indonesia Group</div>
     <h1 style="font-size: clamp(36px, 5vw, 68px);">Saat Teduh</h1>
     <div class="gold-divider"></div>
-    <p style="letter-spacing: 0.15em; text-transform: uppercase; font-size: 12px; color: var(--text-dim); position: relative; z-index: 2;">Satu Hati • Satu Iman • Satu Tujuan</p>
+    <p style="letter-spacing: 0.15em; text-transform: uppercase; font-size: 12px; color: var(--text-dim); position: relative; z-index: 2;">Kebaktian Bersama Denso Indonesia Group</p>
   </div>
 
-  <!-- SLIDE 37: SELESAI -->
+  <!-- SLIDE 28: SELESAI -->
   <div class="slide important">
     <div class="art-glow glow-2" style="opacity: 0.07;"></div>
     <h1 style="font-size: clamp(28px, 4.5vw, 56px); font-weight: 300; letter-spacing: 0.05em; color: var(--text-dim);">Kebaktian Selesai</h1>
     <div class="gold-divider" style="width: 40px; margin: 1.5rem auto;"></div>
     <p style="font-size: clamp(12px, 1.2vw, 15px); letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold-glow); position: relative; z-index: 2;">Tuhan Yesus Memberkati</p>
+  </div>
+
+  <!-- SLIDE 29: DENSO CHRISTIAN COMMUNITY -->
+  <div class="slide important">
+    <div class="community-invite">
+      <div class="community-invite-copy">
+        <div class="tag">Denso Indonesia Group</div>
+        <h2>Denso Christian<br>Community</h2>
+        <div class="gold-divider" style="margin-left: 0;"></div>
+        <p class="community-invite-caption">Bergabung dalam komunitas WhatsApp kami</p>
+        <a class="community-invite-link" href="https://chat.whatsapp.com/COwwJByBgk4Lk02H0wtAgf" target="_blank" rel="noopener noreferrer">Gabung ke grup WhatsApp</a>
+      </div>
+      <a class="community-qr-frame" href="https://chat.whatsapp.com/COwwJByBgk4Lk02H0wtAgf" target="_blank" rel="noopener noreferrer" aria-label="Buka undangan grup Denso Christian Community">
+        <img class="community-qr" src="community-qr.png" alt="QR code untuk bergabung ke grup WhatsApp Denso Christian Community">
+      </a>
+    </div>
   </div>
 
 </div>
