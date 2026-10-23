@@ -33,7 +33,7 @@
   body::before {
     content: "";
     position: absolute; inset: 0;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.35'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctav[...]
     opacity: 0.035;
     pointer-events: none;
     z-index: 10;
@@ -702,19 +702,19 @@
     <div class="section-sub">Worship Leader · Rio</div>
   </div>
 
-  <!-- SLIDE 7: SUKACITAKU -->
+  <!-- SLIDE 7: BAPA, ENGAU MENGENALKU -->
   <div class="slide lyric">
     <div class="lyric-wrapper">
-      <div class="lyric-header">Sukacitaku</div>
+      <div class="lyric-header">Bapa, Engkau Mengenalku</div>
       <div class="lyric-body small">
-        Pujian syukurku<br>
-        Kunaikkan bagiMu<br>
-        Kasih dan rahmatMu<br>
-        Tercurah bagiku<br><br>
-        Hidup bersamaMu<br>
-        Ikut kehendakMu<br>
-        Ku berjalan<br>
-        Tinggalkan masa lalu
+        Bapa, Engkau mengenalku<br>
+        Tahu setiap langkahku<br>
+        Dalam hidupku yang rapuh<br>
+        Engkau tetap dekat padaku<br><br>
+        Sampai akhir hidupku<br>
+        Ku akan percaya pada-Mu<br>
+        Dengan kasih dan janji-Mu<br>
+        Engkau menuntun hidupku
       </div>
     </div>
   </div>
@@ -998,210 +998,62 @@
         <h2>Denso Christian<br>Community</h2>
         <div class="gold-divider" style="margin-left: 0;"></div>
         <p class="community-invite-caption">Bergabung dalam komunitas WhatsApp kami</p>
-        <a class="community-invite-link" href="https://chat.whatsapp.com/COwwJByBgk4Lk02H0wtAgf" target="_blank" rel="noopener noreferrer">Gabung ke grup WhatsApp</a>
+        <a class="community-invite-link" href="https://chat.whatsapp.com/BTjQ9AUaq0N5WB1ci7jxnE" target="_blank" rel="noopener noreferrer">https://chat.whatsapp.com/BTjQ9AUaq0N5WB1ci7jxnE</a>
       </div>
-      <a class="community-qr-frame" href="https://chat.whatsapp.com/COwwJByBgk4Lk02H0wtAgf" target="_blank" rel="noopener noreferrer" aria-label="Buka undangan grup Denso Christian Community">
-        <img class="community-qr" src="community-qr.png" alt="QR code untuk bergabung ke grup WhatsApp Denso Christian Community">
-      </a>
+      <div class="community-qr-frame">
+        <img src="denso-community-qr.png" alt="QR Denso Christian Community" class="community-qr">
+      </div>
     </div>
   </div>
 
 </div>
 
 <script>
-  (function() {
-    const slides = document.querySelectorAll('.slide');
-    const total = slides.length;
-    let cur = 0;
-    let isTransitioning = false;
-    let isTiraiMode = false;
-    let savedIndex = null;
-    const progressBar = document.getElementById('progressBar');
-    const clickZones = document.querySelectorAll('.click-zone');
+  const slides = [...document.querySelectorAll('.slide')];
+  const progressBar = document.getElementById('progressBar');
+  let current = 0;
 
-    // Overlays
-    const blackoutOverlay = document.getElementById('blackoutOverlay');
-    const jesusOverlay = document.getElementById('jesusOverlay');
-    let isBlackout = false;
-    let isJesusOverlay = false;
-    let savedIndexBeforeOverlay = null;
-
-    function updateUI() {
-      slides.forEach((slide, i) => {
-        slide.classList.toggle('active', i === cur);
-      });
-      const progress = (cur + 1) / total;
-      progressBar.style.transform = `scaleX(${progress})`;
-
-      if (isTiraiMode || isBlackout || isJesusOverlay) {
-        clickZones.forEach(el => el.classList.add('disabled'));
-      } else {
-        clickZones.forEach(el => el.classList.remove('disabled'));
-      }
-    }
-
-    function go(dir) {
-      if (isTransitioning || isTiraiMode || isBlackout || isJesusOverlay) return;
-      const next = cur + dir;
-      if (next >= 0 && next < total) {
-        isTransitioning = true;
-        cur = next;
-        updateUI();
-        setTimeout(() => { isTransitioning = false; }, 550);
-      }
-    }
-
-    function toggleTirai() {
-      if (isTransitioning || isBlackout || isJesusOverlay) return;
-
-      if (isTiraiMode) {
-        isTiraiMode = false;
-        if (savedIndex !== null && savedIndex !== 0) {
-          cur = savedIndex;
-          savedIndex = null;
-          updateUI();
-        } else {
-          savedIndex = null;
-          updateUI();
-        }
-      } else {
-        savedIndex = cur;
-        if (cur !== 0) {
-          cur = 0;
-          updateUI();
-        }
-        isTiraiMode = true;
-      }
-    }
-
-    function nextAfterTirai() {
-      if (!isTiraiMode || isBlackout || isJesusOverlay) return;
-      if (savedIndex === null) return;
-      const target = savedIndex + 1;
-      if (target < total) {
-        isTiraiMode = false;
-        cur = target;
-        savedIndex = null;
-        updateUI();
-      }
-    }
-
-    // ===== BLACKOUT TOGGLE (TOMBOL X) =====
-    function toggleBlackout() {
-      if (isTransitioning || isJesusOverlay) return;
-
-      if (isBlackout) {
-        isBlackout = false;
-        blackoutOverlay.classList.remove('active');
-        if (savedIndexBeforeOverlay !== null) {
-          cur = savedIndexBeforeOverlay;
-          savedIndexBeforeOverlay = null;
-          updateUI();
-        }
-      } else {
-        savedIndexBeforeOverlay = cur;
-        blackoutOverlay.classList.add('active');
-        isBlackout = true;
-        updateUI();
-      }
-    }
-
-    // ===== JESUS OVERLAY TOGGLE (TOMBOL C) =====
-    function toggleJesusOverlay() {
-      if (isTransitioning || isBlackout) return;
-
-      if (isJesusOverlay) {
-        isJesusOverlay = false;
-        jesusOverlay.classList.remove('active');
-        if (savedIndexBeforeOverlay !== null) {
-          cur = savedIndexBeforeOverlay;
-          savedIndexBeforeOverlay = null;
-          updateUI();
-        }
-      } else {
-        savedIndexBeforeOverlay = cur;
-        jesusOverlay.classList.add('active');
-        isJesusOverlay = true;
-        updateUI();
-      }
-    }
-
-    // Keyboard
-    document.addEventListener('keydown', e => {
-      // Tombol C untuk Gambar Yesus
-      if (e.key === 'c' || e.key === 'C') {
-        e.preventDefault();
-        toggleJesusOverlay();
-        return;
-      }
-
-      // Tombol X untuk Blackout
-      if (e.key === 'x' || e.key === 'X') {
-        e.preventDefault();
-        toggleBlackout();
-        return;
-      }
-
-      // Tombol B untuk Tirai
-      if (e.key === 'b' || e.key === 'B') {
-        e.preventDefault();
-        if (isBlackout || isJesusOverlay) return;
-        toggleTirai();
-        return;
-      }
-
-      // Tombol N saat tirai aktif
-      if ((e.key === 'n' || e.key === 'N') && isTiraiMode && !isBlackout && !isJesusOverlay) {
-        e.preventDefault();
-        nextAfterTirai();
-        return;
-      }
-
-      // Navigasi normal
-      if (isTiraiMode || isBlackout || isJesusOverlay) return;
-      if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'Enter') {
-        e.preventDefault();
-        go(1);
-      } else if (e.key === 'ArrowLeft') {
-        e.preventDefault();
-        go(-1);
-      }
+  function updateSlides() {
+    slides.forEach((slide, index) => {
+      slide.classList.toggle('active', index === current);
     });
 
-    // Touch
-    let sx = 0, sy = 0;
-    document.addEventListener('touchstart', e => {
-      sx = e.touches[0].clientX;
-      sy = e.touches[0].clientY;
-    }, { passive: true });
-    document.addEventListener('touchend', e => {
-      if (isTiraiMode || isBlackout || isJesusOverlay) return;
-      const dx = sx - e.changedTouches[0].clientX;
-      const dy = sy - e.changedTouches[0].clientY;
-      if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 40) {
-        go(dx > 0 ? 1 : -1);
-      }
-    }, { passive: true });
+    const progress = (current + 1) / slides.length;
+    progressBar.style.transform = `scaleX(${progress})`;
+  }
 
-    // Wheel
-    let wheelTimeout = false;
-    document.addEventListener('wheel', e => {
-      if (isTiraiMode || isBlackout || isJesusOverlay) return;
-      if (wheelTimeout || isTransitioning) return;
-      wheelTimeout = true;
-      setTimeout(() => { wheelTimeout = false; }, 500);
-      if (e.deltaY > 0) go(1);
-      else if (e.deltaY < 0) go(-1);
-    }, { passive: true });
+  function go(direction) {
+    current = Math.max(0, Math.min(slides.length - 1, current + direction));
+    updateSlides();
+  }
 
-    window.go = go;
-    window.toggleTirai = toggleTirai;
-    window.toggleBlackout = toggleBlackout;
-    window.toggleJesusOverlay = toggleJesusOverlay;
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'ArrowRight' || event.key === 'PageDown' || event.key === ' ') {
+      event.preventDefault();
+      go(1);
+    }
+    if (event.key === 'ArrowLeft' || event.key === 'PageUp') {
+      event.preventDefault();
+      go(-1);
+    }
+    if (event.key.toLowerCase() === 'c') {
+      document.getElementById('jesusOverlay').classList.toggle('active');
+    }
+    if (event.key.toLowerCase() === 'b') {
+      document.getElementById('blackoutOverlay').classList.toggle('active');
+    }
+  });
 
-    updateUI();
-  })();
+  document.addEventListener('click', (event) => {
+    if (event.target.closest('.jesus-overlay')) {
+      document.getElementById('jesusOverlay').classList.remove('active');
+    }
+    if (event.target.closest('.blackout-overlay')) {
+      document.getElementById('blackoutOverlay').classList.remove('active');
+    }
+  });
+
+  updateSlides();
 </script>
-
 </body>
 </html>
